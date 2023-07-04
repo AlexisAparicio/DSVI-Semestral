@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Seguridad Colectiva</string>
     <string name="correo_reset">Correo enviado exitosamente para restablecer su contraseña</string>
+    <string name="Bienvenida">Bienvenido</string>
 </resources>

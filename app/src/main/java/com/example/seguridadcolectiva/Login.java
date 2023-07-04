@@ -15,7 +15,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void Login(View view){
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this,MainMain.class);
         startActivity(i);
     }
 

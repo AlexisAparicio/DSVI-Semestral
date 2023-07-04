@@ -11,11 +11,12 @@
         android:layout_width="180dp"
         android:layout_height="77dp"
         android:layout_marginStart="115dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="66dp"
         android:layout_marginEnd="116dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="57dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/_214px_escudo_de_la_policia_nacional_de_panam__svg" />
@@ -28,7 +29,7 @@
         android:layout_marginTop="143dp"
         android:layout_marginEnd="323dp"
         android:layout_marginBottom="30dp"
-        android:text="Sign UP"
+        android:text="INGRESA"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -83,6 +84,7 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="Ingresar"
+            android:onClick="Login"
             app:cornerRadius="25dp" />
 
         <LinearLayout
@@ -98,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:text="Don´t have a account?"
+                android:text="No tienes una cuenta?"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -108,9 +110,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:onClick="Sign"
-                android:text="Sign Up"
+                android:text="Inscribete"
                 android:textColor="@color/green_main"
-                android:textSize="16sp"></TextView>
+                android:textSize="16sp">
+
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -119,13 +123,13 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
-
                 android:layout_weight="1"
+
                 android:backgroundTint="@color/purple_200"
                 android:backgroundTintMode="add"
                 android:padding="10dp"
@@ -153,6 +157,7 @@
                 android:text="Whatsapp"
                 app:cornerRadius="25dp" />
         </LinearLayout>
+
     </LinearLayout>
 
     <TextView
@@ -163,7 +168,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="143dp"
-        android:text="Don´t have a account?"
+        android:text="Olvido su contraseña?"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -180,7 +185,7 @@
         android:layout_marginEnd="106dp"
         android:layout_marginBottom="143dp"
         android:onClick="resetpass"
-        android:text="Sign Up"
+        android:text="Restablecer contraseña"
         android:textColor="@color/green_main"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -188,19 +193,4 @@
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="62dp"
-        android:onClick="back"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
