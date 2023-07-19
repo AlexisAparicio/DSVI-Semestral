@@ -48,14 +48,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/etlUsermail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
-            android:hint="Ingrese su correo o cedula"
+            android:hint="Ingrese su correo"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:text=""
@@ -63,7 +63,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/etlPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -71,20 +71,19 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:hint="Ingrese su Contraseña"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:text=""
             android:textAlignment="center"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="Ingresar"
-            android:onClick="Login"
             app:cornerRadius="25dp" />
 
         <LinearLayout
@@ -105,11 +104,10 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/password_reset"
+                android:id="@+id/text_link_registro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:onClick="Sign"
                 android:text="Inscribete"
                 android:textColor="@color/green_main"
                 android:textSize="16sp">
@@ -172,12 +170,12 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/password_reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/password_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
