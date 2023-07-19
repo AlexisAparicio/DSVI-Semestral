@@ -88,7 +88,7 @@
 
         <EditText
             android:id="@+id/inp_mail"
-            android:layout_width="wrap_content"
+            android:layout_width="373dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
@@ -121,19 +121,6 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:hint="Ingrese Contraseña"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/inp_passcode2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="Repita su Contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textAlignment="textStart"
@@ -180,11 +167,11 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/inp_button_register"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Registrarse"
             android:layout_gravity="center"
+            android:text="Registrarse"
             app:cornerRadius="25dp" />
 
 
