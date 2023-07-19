@@ -79,8 +79,8 @@
                 android:gravity="center">
 
                 <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal">
 
                     <ImageButton
@@ -90,7 +90,7 @@
                         android:layout_margin="20dp"
                         android:gravity="center"
                         android:text="Button"
-                        app:srcCompat="@drawable/whatsapp_svg"/>
+                        app:srcCompat="@drawable/whatsapp_svg" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
