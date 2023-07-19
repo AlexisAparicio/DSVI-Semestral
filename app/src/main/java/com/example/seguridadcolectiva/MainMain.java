@@ -18,16 +18,54 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 public class MainMain extends AppCompatActivity {
-    Location mLastLocation;
+   /* Location mLastLocation;
     TextView mLatitude;
     TextView mLongitude;
-    private GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient mGoogleApiClient;*/
 
+    //Variables para mostrar los datos
+    private TextView tv1, tvProvincia, tvCorregimiento,tvubicacion;
+    private DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_main);
-        mLatitude=(TextView)findViewById(R.id.ubicacion);
+
+        tv1 = findViewById(R.id.name_main);
+        tvubicacion=findViewById(R.id.ubicacion);
+        //tvProvincia= findViewById(R.id.tvhProvincia);
+        //tvCorregimiento= findViewById(R.id.tvhCorregimiento);
+
+        databaseHelper = new DatabaseHelper(this);
+
+        String email = getIntent().getStringExtra("email");
+
+        if (email != null) {
+            String[] data = databaseHelper.getNameAndLastNameAndFields(email);
+            String nombre = data[0];
+            String apellido = data[1];
+            String provincia = data[2];
+            String corregimiento = data[3];
+
+            if (nombre != null && apellido != null) {
+
+                String nombreyapellido = nombre + " " + apellido;
+                tv1.setText(nombreyapellido);
+
+                // Mostrar los valores de los campos adicionales
+                String ubicacion = provincia + " " + corregimiento;
+                tvubicacion.setText(ubicacion);
+
+                //tvProvincia.setText(provincia);
+                //tvCorregimiento.setText(corregimiento);
+            } else {
+                tv1.setText("Hola Null Null");
+            }
+        } else {
+            tvubicacion.setText("Hola Null Null");
+        }
+        /*
+        //mLatitude=(TextView)findViewById(R.id.ubicacion);
         //mLongitude=(TextView)findViewById(R.id.mLongitude);
 
         // Establecer punto de entrada para la API de ubicación
@@ -35,11 +73,11 @@ public class MainMain extends AppCompatActivity {
                 .addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) this)
                 .addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) this)
                 .addApi(LocationServices.API)
-                .build();
+                .build();*/
 
 
     }
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -85,5 +123,5 @@ public class MainMain extends AppCompatActivity {
         public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
         }
-    }
+    }   */
 }
