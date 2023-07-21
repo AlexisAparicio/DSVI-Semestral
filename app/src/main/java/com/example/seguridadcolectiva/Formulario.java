@@ -45,32 +45,27 @@ public class Formulario extends AppCompatActivity {
                 String provincia = etprovincia.getText().toString().trim();
                 String corregimiento = etcorregimiento.getText().toString().trim();
 
-                // Verificar si los datos del formulario ya existen en la base de datos
-                boolean dataExists = databaseHelper.checkFormDataExistence(tipoReporte, horaReporte, zona, nombre, provincia, corregimiento);
+                // Guarda los datos del formulario en la nueva tabla "formulario" de la base de datos
+                boolean success = databaseHelper.saveFormData(tipoReporte, horaReporte, zona, nombre, provincia, corregimiento);
 
-                if (dataExists) {
-                    // Los datos del formulario ya existen en la base de datos
-                    Toast.makeText(Formulario.this, "Error: Los datos del formulario ya existen", Toast.LENGTH_SHORT).show();
+                if (success) {
+                    Toast.makeText(Formulario.this, "Datos del formulario guardados exitosamente", Toast.LENGTH_SHORT).show();
+
+                    // Crear un Intent para abrir la actividad VerReporte
+                    Intent intent = new Intent(Formulario.this, VerReporte.class);
+
+                    // Pasar los datos del formulario como extras al Intent
+                    intent.putExtra("tipoReporte", tipoReporte);
+                    intent.putExtra("horaReporte", horaReporte);
+                    intent.putExtra("zona", zona);
+                    intent.putExtra("nombre", nombre);
+                    intent.putExtra("provincia", provincia);
+                    intent.putExtra("corregimiento", corregimiento);
+
+                    // Iniciar la actividad VerReporte
+                    startActivity(intent);
                 } else {
-                    // Los datos del formulario no existen en la base de datos, procede a guardarlos
-                    boolean success = databaseHelper.saveFormData(tipoReporte, horaReporte, zona, nombre, provincia, corregimiento);
-
-                    if (success) {
-                        Toast.makeText(Formulario.this, "Datos del formulario guardados exitosamente", Toast.LENGTH_SHORT).show();
-
-                        // Establecer el resultado y cerrar la actividad
-                        Intent intent = new Intent();
-                        intent.putExtra("tipoReporte", tipoReporte);
-                        intent.putExtra("horaReporte", horaReporte);
-                        intent.putExtra("zona", zona);
-                        intent.putExtra("nombre", nombre);
-                        intent.putExtra("provincia", provincia);
-                        intent.putExtra("corregimiento", corregimiento);
-                        setResult(RESULT_OK, intent);
-                        finish();
-                    } else {
-                        Toast.makeText(Formulario.this, "Error al guardar los datos del formulario", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(Formulario.this, "Error al guardar los datos del formulario", Toast.LENGTH_SHORT).show();
                 }
             }
         });

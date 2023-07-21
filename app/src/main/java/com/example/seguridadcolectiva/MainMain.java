@@ -79,6 +79,17 @@ public class MainMain extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        TextView tvVerReporte = findViewById(R.id.text_link_ver_problema);
+        tvVerReporte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear un Intent para abrir la actividad VerReporte
+                Intent intent = new Intent(MainMain.this, VerReporte.class);
+
+                // Iniciar la actividad VerReporte
+                startActivity(intent);
+            }
+        });
         btnparametros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
