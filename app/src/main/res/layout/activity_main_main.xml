@@ -19,14 +19,15 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="76dp"
-                android:layout_height="23dp"
+                android:layout_width="223dp"
+                android:layout_height="61dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="177dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="176dp"
                 android:gravity="center"
-                android:text="@string/Bienvenida" />
+                android:text="@string/Bienvenida"
+                android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -47,20 +48,22 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:hint="Bolivar Aparicio" />
+                android:hint="Bolivar Aparicio"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/ubicacion"
-                android:layout_width="90dp"
+                android:layout_width="255dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:hint="Panamá" />
+                android:hint="Panamá"
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="72dp"
-                android:layout_height="59dp"
+                android:layout_width="94dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 app:srcCompat="@drawable/_214px_escudo_de_la_policia_nacional_de_panam__svg" />
@@ -70,10 +73,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Opciones" />
+                android:text="Opciones"
+                android:textSize="24sp" />
 
             <TableLayout
-                android:layout_width="wrap_content"
+                android:layout_width="362dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center">
@@ -83,8 +87,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:padding="20dp"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:padding="20dp">
 
                     <ImageView
                         android:id="@+id/imageView6"
@@ -95,21 +99,21 @@
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="90dp"
+                        android:layout_width="133dp"
                         android:layout_height="match_parent"
                         app:srcCompat="@android:drawable/ic_dialog_info" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/text_link_reportar_problema"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="38dp"
+
                         android:text="Reportar Problema"
-                        android:textColor="#3ACC40"
                         android:textColorLink="#832929"
                         android:textSize="20dp" />
 
@@ -118,8 +122,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
-                        android:textSize="20dp"
-                        android:text="Ver Reportes"></TextView>
+                        android:text="Ver Reportes"
+                        android:textSize="20dp"></TextView>
                 </TableRow>
 
 
@@ -128,8 +132,7 @@
             <Button
                 android:id="@+id/parametros"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Prueba recibir parametros" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>
