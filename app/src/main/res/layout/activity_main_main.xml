@@ -90,8 +90,8 @@
                         android:id="@+id/imageView6"
                         android:layout_width="83dp"
                         android:layout_height="83dp"
-                        app:srcCompat="@drawable/baseline_report_24"
-                        android:onClick="Formulario"/>
+                        android:onClick="Formulario"
+                        app:srcCompat="@drawable/baseline_report_24" />
 
                     <ImageView
                         android:id="@+id/imageView7"
@@ -105,15 +105,16 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/text_link_reportar_problema"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
                         android:text="Reportar Problema"
-                        />
+                        android:textColor="#3ACC40"
+                        android:textColorLink="#832929"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/text_link_ver_problema"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="20dp"
@@ -123,6 +124,12 @@
 
 
             </TableLayout>
+
+            <Button
+                android:id="@+id/parametros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prueba recibir parametros" />
 
         </LinearLayout>
     </ScrollView>

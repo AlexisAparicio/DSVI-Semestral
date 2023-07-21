@@ -34,6 +34,9 @@
             android:name=".Reset_Pass"
             android:exported="false" />
         <activity
+            android:name=".PruebaRecibir"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

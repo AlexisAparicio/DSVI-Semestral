@@ -9,10 +9,11 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-
+import android.content.Intent;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.view.View;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -20,7 +21,8 @@ import com.google.android.gms.location.LocationServices;
 public class MainMain extends AppCompatActivity {
 
     //Variables para mostrar los datos
-    private TextView tv1, tvProvincia, tvCorregimiento,tvubicacion;
+    private TextView tv1, tvProvincia, tvCorregimiento,tvubicacion,tvproblema;
+    private Button btnparametros;
     private DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class MainMain extends AppCompatActivity {
 
         tv1 = findViewById(R.id.name_main);
         tvubicacion=findViewById(R.id.ubicacion);
+        btnparametros = findViewById(R.id.parametros);
+        tvproblema = findViewById(R.id.text_link_reportar_problema);
+
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -56,5 +61,35 @@ public class MainMain extends AppCompatActivity {
         } else {
             tvubicacion.setText("Hola Null Null");
         }
+
+        TextView tvRealizarReporte = findViewById(R.id.text_link_reportar_problema);
+        tvRealizarReporte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear un Intent para abrir la actividad Formulario
+                Intent intent = new Intent(MainMain.this, Formulario.class);
+
+                // Guardar los valores actuales de tv1 y tvubicacion en el Bundle
+                Bundle bundle = new Bundle();
+                bundle.putString("nombreApellido", tv1.getText().toString());
+                bundle.putString("ubicacion", tvubicacion.getText().toString());
+                intent.putExtras(bundle);
+
+                // Iniciar la actividad Formulario
+                startActivity(intent);
+            }
+        });
+        btnparametros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtener el nombre y apellido de los TextViews
+                String nombre = tv1.getText().toString();
+
+                // Iniciar la actividad PruebaRecibir y pasar el nombre y apellido como extras
+                Intent intent = new Intent(MainMain.this, PruebaRecibir.class);
+                intent.putExtra("nombre", nombre);
+                startActivity(intent);
+            }
+        });
     }
 }
