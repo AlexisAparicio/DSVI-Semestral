@@ -94,6 +94,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return dataExists;
     }
+    public Cursor getFormData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_FORMULARIO;
+        return db.rawQuery(query, null);
+    }
 
     public boolean registerUser(String email, String password, String nombre, String apellido, String provincia, String corregimiento) {
         SQLiteDatabase db = this.getWritableDatabase();
